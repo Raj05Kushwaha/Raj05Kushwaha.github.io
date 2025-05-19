@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Kushwaha | Student Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF7E33;  /* Vibrant orange */
+            --secondary: #44C4A1;  /* Fresh teal */
+            --accent: #FFD166;  /* Sunny yellow */
+            --dark: #2A2D34;  /* Dark slate */
+            --light: #F7F7FF;  /* Off-white */
+            --gray: #6C757D;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F7F7FF;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: 8px solid var(--secondary);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .student-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav a.nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            padding: 0.8rem 1.2rem !important;
+            margin: 0 0.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a.nav-link:hover, nav a.nav-link.active {
+            color: white !important;
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-img {
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            border: 4px solid var(--accent);
+        }
+        
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+        }
+        
+        h2 {
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: #FFE8DC;
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E9ECEF;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            border: 2px solid white;
+        }
+        
+        .student-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .student-feature {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .student-feature i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+            
+            nav a.nav-link {
+                padding: 0.5rem !important;
+                margin: 0;
+            }
+            
+            .student-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="student-badge">
+                <i class="fas fa-graduation-cap me-2"></i>Computer Science Student
+            </div>
+            <h1 class="display-4 fw-bold mb-3">Hey there, I’m Raj Kushwaha</h1>
+<p class="lead mb-4">CS Undergrad | Tech Explorer | Always Curious</p>
+            <p class="mb-4">Welcome to my portfolio! Here, you’ll find a collection of my projects, achievements, and a glimpse into my journey as a computer science student.</p>
+            
+            <div class="student-features">
+                <div class="student-feature">
+                    <i class="fas fa-university"></i>
+                    <div>University of Mumbai</div>
+                </div>
+                <div class="student-feature">
+                    <i class="fas fa-laptop-code"></i>
+                    <div>Tech Projects</div>
+                </div>
+                <div class="student-feature">
+                    <i class="fas fa-hands-helping"></i>
+                    <div>Community Volunteer</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary);">RK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <section id="about">
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Raj Kushwaha" class="profile-img">
+                <div class="intro-text">
+                    <h2>About Me</h2>
+                    <p class="lead">A passionate Computer Science student from Mumbai with big dreams and endless curiosity.</p>
+                    <p>I'm currently pursuing my Bachelor's degree while actively working on projects that combine my technical skills with my passion for social good. When I'm not coding, you'll find me volunteering in my community, reading about emerging technologies, or working out at the gym.</p>
+                    <p>My journey is just beginning, and I'm excited to explore how technology can solve real-world problems and make a difference in people's lives.</p>
+                    
+                    <div class="mt-4">
+                        <span class="skill-badge"><i class="fas fa-code me-2"></i>Programming</span>
+                        <span class="skill-badge"><i class="fas fa-brain me-2"></i>AI & ML</span>
+                        <span class="skill-badge"><i class="fas fa-users me-2"></i>Teamwork</span>
+                        <span class="skill-badge"><i class="fas fa-chalkboard-teacher me-2"></i>Mentoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <video controls poster="video-poster.jpg">
+                    <source src="intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education Journey</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4 border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary"><i class="fas fa-graduation-cap me-2"></i>University of Mumbai</h3>
+                            <h5 class="text-muted">Bachelor of Science in Computer Science</h5>
+                            <p class="text-muted mb-3">2022 - Present</p>
+                            <ul>
+                                <li>Current SGPA: 7.8/10.0</li>
+                                <li>Coursework: AI, Data Structures, Web Development</li>
+                                <li>Member of Computer Science Student Association</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4 border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary"><i class="fas fa-school me-2"></i>Mumbai High School</h3>
+                            <h5 class="text-muted">Higher Secondary Education</h5>
+                            <p class="text-muted mb-3">2020 - 2022</p>
+                            <ul>
+                                <li>Graduated with Honors (84%)</li>
+                                <li>Specialized in Science and Mathematics</li>
+                                <li>Participated in various science fairs and coding competitions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Student Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-primary">AI</span>
+                                <span class="text-muted">2023</span>
+                            </div>
+                            <h4 class="card-title">AI Chatbot for Student Services</h4>
+                            <p class="card-text">Developed a GPT-powered chatbot to help students navigate university services and resources.</p>
+                            <div class="mt-auto">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">GPT API</span>
+                                <span class="skill-badge">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-success">Web Dev</span>
+                                <span class="text-muted">2023</span>
+                            </div>
+                            <h4 class="card-title
+                            <p class="card-text">Created a web platform events.</p>
+                            <div class="mt-auto">
+                                <span class="skill-badge">React</span>
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-warning text-dark">Mobile</span>
+                                <span class="text-muted">2024</span>
+                            </div>
+                            <h4 class="card-title">Study Buddy App</h4>
+                            <p class="card-text">Mobile application connecting students for collaborative learning and study groups.</p>
+                            <div class="mt-auto">
+                                <span class="skill-badge">Flutter</span>
+                                <span class="skill-badge">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Student Achievements</h2>
+            <div class="achievement-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4><i class="fas fa-trophy text-warning me-2"></i>Top Performer - Annual Tech Fest</h4>
+                    <span class="badge bg-primary">2023</span>
+                </div>
+                <p class="mb-0">Awarded for outstanding performance in the annual tech fest, showcasing innovative projects.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4><i class="fas fa-award text-info me-2"></i>Dean's List Honors</h4>
+                    <span class="badge bg-primary">2022-2023</span>
+                </div>
+            </div>
+            <div class="achievement-card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4><i class="fas fa-hands-helping text-success me-2"></i>Community Service Award</h4>
+                    <span class="badge bg-primary">2023</span>
+                </div>
+                <p class="mb-0">Recognized for volunteering efforts in local community service projects, making a positive impact.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-4">Contact Information</h4>
+                    <p><i class="fas fa-envelope me-2 text-primary"></i> raj.kushwaha@example.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2 text-danger"></i> Mumbai, India</p>
+                    
+                    <h4 class="mt-5 mb-3">Connect With Me</h4>
+                    <div class="d-flex">
+                        <a href="https://github.com/Raj05Kushwaha" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/Raj_Noob05?t=FdHcdSlx5jW8-OhHtzeXUg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/rajj._13/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <h5>Looking For</h5>
+                        <ul>
+                            <li>Internship opportunities in tech</li>
+                            <li>Collaboration on student projects</li>
+                            <li>Study groups or hackathons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <h3 class="mb-4">Raj Kushwaha</h3>
+            <p class="mb-4">Computer Science Student | Tech Enthusiast | Future Innovator</p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#about" class="text-white">About</a>
+                <a href="#education" class="text-white">Education</a>
+                <a href="#projects" class="text-white">Projects</a>
+                <a href="#contact" class="text-white">Contact</a>
+            </div>
+            <p class="mb-0">© 2025 Raj Kushwaha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to current section in navigation
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
