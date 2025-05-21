@@ -287,6 +287,16 @@
             color: white;
         }
         
+        .map-container {
+            height: 300px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+            border: 4px solid var(--accent);
+        }
+        
         @media (max-width: 768px) {
             .profile-container {
                 flex-direction: column;
@@ -319,9 +329,9 @@
             <div class="student-badge">
                 <i class="fas fa-graduation-cap me-2"></i>Computer Science Student
             </div>
-            <h1 class="display-4 fw-bold mb-3">Hey there, I’m Raj Kushwaha</h1>
-<p class="lead mb-4">CS Undergrad | Tech Explorer | Always Curious</p>
-            <p class="mb-4">Welcome to my portfolio! Here, you’ll find a collection of my projects, achievements, and a glimpse into my journey as a computer science student.</p>
+            <h1 class="display-4 fw-bold mb-3">Hey there, I'm Raj Kushwaha</h1>
+            <p class="lead mb-4">CS Undergrad | Tech Explorer | Always Curious</p>
+            <p class="mb-4">Welcome to my portfolio! Here, you'll find a collection of my projects, achievements, and a glimpse into my journey as a computer science student.</p>
             
             <div class="student-features">
                 <div class="student-feature">
@@ -378,12 +388,13 @@
             </div>
 
             <div class="video-container">
-    <iframe width="1047" height="589" src="https://www.youtube.com/embed/zAph-lPRrb4" 
-        title="VID20250520110622" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-</div>
+                <iframe width="1047" height="589" src="https://www.youtube.com/embed/zAph-lPRrb4" 
+                    title="VID20250520110622" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </section>
 
         <section id="education">
             <h2>Education Journey</h2>
@@ -446,8 +457,8 @@
                                 <span class="badge bg-success">Web Dev</span>
                                 <span class="text-muted">2023</span>
                             </div>
-                            <h4 class="card-title
-                            <p class="card-text">Created a web platform events.</p>
+                            <h4 class="card-title">University Events Platform</h4>
+                            <p class="card-text">Created a web platform for university events management and student participation.</p>
                             <div class="mt-auto">
                                 <span class="skill-badge">React</span>
                                 <span class="skill-badge">Node.js</span>
@@ -489,6 +500,7 @@
                     <h4><i class="fas fa-award text-info me-2"></i>Dean's List Honors</h4>
                     <span class="badge bg-primary">2022-2023</span>
                 </div>
+                <p class="mb-0">Recognized for academic excellence by being named to the Dean's List for consecutive semesters.</p>
             </div>
             <div class="achievement-card">
                 <div class="d-flex justify-content-between align-items-center">
@@ -521,18 +533,31 @@
                 </div>
                 <div class="col-md-6">
                     <h4 class="mb-4">Contact Information</h4>
-                    <p><i class="fas fa-envelope me-2 text-primary"></i> kushwaha05raj@gmail.com.com</p>
-                    <p><i class="fas fa-phone-square-alt"></i> 8484090613</p>
+                    <p><i class="fas fa-envelope me-2 text-primary"></i> kushwaha05raj@gmail.com</p>
+                    <p><i class="fas fa-phone me-2 text-primary"></i> +91 8484090613</p>
                     <p><i class="fas fa-map-marker-alt me-2 text-danger"></i> Mumbai, India</p>
                     
-                    <h4 class="mt-5 mb-3">Connect With Me</h4>
+                    <!-- Mumbai Location Map -->
+                    <div class="map-container mt-4">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.715071416788!2d72.83285731537766!3d19.0339884582583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce8a3f9a13a1%3A0x7d8a7e1e3a4b5c6d!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    
+                    <h4 class="mt-4 mb-3">Connect With Me</h4>
                     <div class="d-flex">
                         <a href="https://github.com/Raj05Kushwaha" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="https://x.com/Raj_Noob05?t=FdHcdSlx5jW8-OhHtzeXUg&s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/rajj._13/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     </div>
                     
-                    <div class="mt-5">
+                    <div class="mt-4">
                         <h5>Looking For</h5>
                         <ul>
                             <li>Internship opportunities in tech</li>
@@ -594,7 +619,24 @@
                 }
             });
         });
+
+        // Get current location (if user allows)
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            console.log("Latitude: " + position.coords.latitude + 
+                        "<br>Longitude: " + position.coords.longitude);
+            // You could update the map with this position if you want
+        }
+
+        // Call getLocation when page loads if you want to show user's current location
+        // window.onload = getLocation;
     </script>
 </body>
-
 </html>
