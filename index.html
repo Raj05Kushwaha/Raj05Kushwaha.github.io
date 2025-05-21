@@ -10,29 +10,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6C757D;  /* Vibrant orange */
-            --secondary: #44C4A1;  /* Fresh teal */
-            --accent: #FFD166;  /* Sunny yellow */
-            --dark: #2A2D34;  /* Dark slate */
-            --light: #F7F7FF;  /* Off-white */
-            --gray: #6C757D;
+            --primary: #A7C7E7;  /* Soft pastel blue */
+            --secondary: #B5EAD7;  /* Mint green */
+            --accent: #FFDAC1;  /* Peach */
+            --dark: #555B6E;  /* Dark slate blue */
+            --light: #F9F7F7;  /* Very light cream */
+            --gray: #B8B8B8;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F7F7FF;
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
             padding: 6rem 0 4rem;
             position: relative;
             overflow: hidden;
             text-align: center;
-            border-bottom: 8px solid var(--secondary);
+            border-bottom: 8px solid var(--accent);
         }
         
         header::before {
@@ -54,12 +54,13 @@
         .student-badge {
             display: inline-block;
             background-color: var(--secondary);
-            color: white;
+            color: var(--dark);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
         }
         
         nav {
@@ -80,7 +81,7 @@
         }
         
         nav a.nav-link:hover, nav a.nav-link.active {
-            color: white !important;
+            color: var(--dark) !important;
             background-color: var(--primary);
             transform: translateY(-2px);
         }
@@ -97,7 +98,7 @@
             height: 350px;
             object-fit: cover;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             border: 5px solid white;
             transition: transform 0.3s ease;
         }
@@ -138,7 +139,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 2.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--accent);
+            border-top: 4px solid var(--primary);
         }
         
         section:hover {
@@ -148,6 +149,7 @@
         
         h1, h2, h3, h4 {
             font-weight: 600;
+            color: var(--dark);
         }
         
         h2 {
@@ -171,6 +173,7 @@
         .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
+            color: var(--dark);
             padding: 0.6rem 1.5rem;
             border-radius: 8px;
             font-weight: 500;
@@ -180,6 +183,7 @@
         .btn-primary:hover {
             background-color: var(--secondary);
             border-color: var(--secondary);
+            color: var(--dark);
             transform: translateY(-2px);
         }
         
@@ -195,6 +199,7 @@
         .achievement-card:hover {
             transform: translateX(5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: white;
         }
         
         .social-icon {
@@ -204,7 +209,7 @@
             width: 40px;
             height: 40px;
             background-color: var(--primary);
-            color: white;
+            color: var(--dark);
             border-radius: 50%;
             margin-right: 0.8rem;
             transition: all 0.3s ease;
@@ -223,13 +228,14 @@
         
         .skill-badge {
             display: inline-block;
-            background-color: #FFE8DC;
-            color: var(--primary);
+            background-color: #E2F0FD;
+            color: var(--dark);
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
             margin: 0.3rem;
             font-size: 0.85rem;
             font-weight: 500;
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         .timeline {
@@ -273,18 +279,19 @@
         }
         
         .student-feature {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(5px);
             padding: 1rem 1.5rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.3);
         }
         
         .student-feature i {
             font-size: 1.5rem;
-            color: white;
+            color: var(--dark);
         }
         
         .map-container {
@@ -295,6 +302,21 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-top: 1rem;
             border: 4px solid var(--accent);
+        }
+        
+        .badge.bg-primary {
+            background-color: var(--primary) !important;
+            color: var(--dark);
+        }
+        
+        .badge.bg-success {
+            background-color: var(--secondary) !important;
+            color: var(--dark);
+        }
+        
+        .badge.bg-warning {
+            background-color: var(--accent) !important;
+            color: var(--dark);
         }
         
         @media (max-width: 768px) {
@@ -535,7 +557,7 @@
                     <h4 class="mb-4">Contact Information</h4>
                     <p><i class="fas fa-envelope me-2 text-primary"></i> kushwaha05raj@gmail.com</p>
                     <p><i class="fas fa-phone me-2 text-primary"></i> +91 8484090613</p>
-                    <p><i class="fas fa-map-marker-alt me-2 text-danger"></i> Mumbai, India</p>
+                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> Mumbai, India</p>
                     
                     <!-- Mumbai Location Map -->
                     <div class="map-container mt-4">
