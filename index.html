@@ -13,11 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#A7C7E7',
-                        secondary: '#B5EAD7',
-                        accent: '#FFDAC1',
-                        dark: '#555B6E',
-                        light: '#F9F7F7',
+                        primary: '#1F2839',
+                        secondary: '#B69D74',
+                        accent: '#8C7B6B',
+                        dark: '#1A1A1A',
+                        light: '#F5F5EF',
                     },
                     fontFamily: {
                         poppins: ['Poppins', 'sans-serif'],
@@ -47,11 +47,11 @@
     </script>
     <style type="text/css">
         .pattern-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A7C7E7' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231F2839' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #A7C7E7 0%, #B5EAD7 50%, #FFDAC1 100%);
+            background: linear-gradient(135deg, #1F2839 0%, #B69D74 50%, #8C7B6B 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -64,7 +64,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #A7C7E7;
+            background-color: #1F2839;
             transition: width 0.3s ease;
         }
         
@@ -94,7 +94,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: #A7C7E7;
+            background-color: #1F2839;
             border: 2px solid white;
             z-index: 1;
         }
@@ -121,6 +121,27 @@
         .pulse-animation {
             animation: pulse 2s infinite;
         }
+        
+        .hardware-card {
+            transition: all 0.3s ease;
+        }
+        
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #B69D74;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -134,6 +155,7 @@
             <a href="#about" class="text-2xl font-medium hover:text-primary transition-colors">About</a>
             <a href="#education" class="text-2xl font-medium hover:text-primary transition-colors">Education</a>
             <a href="#projects" class="text-2xl font-medium hover:text-primary transition-colors">Projects</a>
+            <a href="#hardware" class="text-2xl font-medium hover:text-primary transition-colors">Hardware</a>
             <a href="#achievements" class="text-2xl font-medium hover:text-primary transition-colors">Achievements</a>
             <a href="#contact" class="text-2xl font-medium hover:text-primary transition-colors">Contact</a>
         </div>
@@ -154,12 +176,12 @@
     </div>
 
     <!-- Header -->
-    <header class="relative overflow-hidden bg-gradient-to-br from-primary to-secondary text-dark py-20 md:py-24">
+    <header class="relative overflow-hidden bg-gradient-to-br from-primary to-secondary text-white py-20 md:py-24">
         <div class="absolute inset-0 pattern-bg opacity-10"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
             <div class="inline-flex items-center px-6 py-2 rounded-full bg-white bg-opacity-90 shadow-md mb-6 animate-fade-in">
                 <i class="fas fa-graduation-cap mr-2 text-primary"></i>
-                <span class="font-medium">Computer Science Student</span>
+                <span class="font-medium text-dark">Computer Science Student</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
                 Hey there, I'm <span class="gradient-text">Raj Kushwaha</span>
@@ -172,15 +194,15 @@
             </p>
             
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 animate-slide-up" style="animation-delay: 0.6s;">
-                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm">
+                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm text-dark">
                     <i class="fas fa-university text-primary mr-3"></i>
                     <div>University of Mumbai</div>
                 </div>
-                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm">
+                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm text-dark">
                     <i class="fas fa-laptop-code text-primary mr-3"></i>
                     <div>Tech Projects</div>
                 </div>
-                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm">
+                <div class="flex items-center bg-white bg-opacity-80 backdrop-blur-sm px-6 py-3 rounded-lg border border-white border-opacity-30 shadow-sm text-dark">
                     <i class="fas fa-hands-helping text-primary mr-3"></i>
                     <div>Community Volunteer</div>
                 </div>
@@ -212,8 +234,8 @@
                         <img src="https://raw.githubusercontent.com/Raj05Kushwaha/raj_intern/refs/heads/main/img.jpeg" alt="Raj Kushwaha" class="w-full h-auto">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-30"></div>
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-accent p-4 rounded-xl shadow-lg z-10">
-                        <div class="text-center">
+                    <div class="absolute -bottom-6 -right-6 bg-secondary p-4 rounded-xl shadow-lg z-10">
+                        <div class="text-center text-white">
                             <p class="text-sm font-medium">Currently Studying</p>
                             <p class="font-bold">Computer Science</p>
                         </div>
@@ -256,7 +278,7 @@
                     </div>
                     
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="px-6 py-3 bg-primary text-dark font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1 flex items-center">
+                        <a href="#projects" class="px-6 py-3 bg-primary text-white font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1 flex items-center">
                             <i class="fas fa-project-diagram mr-2"></i> View Projects
                         </a>
                         <a href="#contact" class="px-6 py-3 bg-white border border-primary text-dark font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1 flex items-center">
@@ -267,17 +289,14 @@
             </div>
             
             <!-- Video Section -->
-            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-accent relative">
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/zAph-lPRrb4" 
-                    title="VID20250520110622" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                    class="w-full h-[300px] md:h-[500px]">
-                </iframe>
-                <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 hover:bg-opacity-10 transition-all">
-                    <div class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
-                        <i class="fas fa-play text-primary text-2xl"></i>
-                    </div>
+            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-secondary relative">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/zAph-lPRrb4" 
+                        title="Raj Kushwaha Portfolio Video" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        class="w-full h-[300px] md:h-[500px]">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -420,7 +439,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-3">
-                            <span class="inline-block px-3 py-1 bg-primary text-dark rounded-full text-xs font-bold">AI</span>
+                            <span class="inline-block px-3 py-1 bg-primary text-white rounded-full text-xs font-bold">AI</span>
                             <span class="text-gray-500 text-sm">2023</span>
                         </div>
                         <h3 class="text-xl font-bold mb-3">AI Chatbot for Student Services</h3>
@@ -489,66 +508,92 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center px-6 py-3 bg-primary text-dark font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1">
                     <i class="fas fa-plus-circle mr-2"></i> View All Projects
                 </a>
             </div>
         </section>
 
-        <!-- Achievements Section -->
-        <section id="achievements" class="mb-24 scroll-mt-16">
+        <!-- Hardware Shopping Section -->
+        <section id="hardware" class="mb-24 scroll-mt-16">
             <h2 class="text-3xl font-bold mb-12 text-center relative pb-4">
-                <span class="gradient-text">Student Achievements</span>
+                <span class="gradient-text">Tech Hardware</span>
                 <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary rounded-full"></span>
             </h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Achievement 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-trophy text-primary text-2xl"></i>
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600">As a computer science student, I'm passionate about hardware too. Here are some recommended components for fellow tech enthusiasts:</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Hardware Item 1 -->
+                <div class="hardware-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://m.media-amazon.com/images/I/61L1ItFgFHL._AC_UF1000,1000_QL80_.jpg" alt="Raspberry Pi 4" class="w-full h-48 object-cover">
+                        <span class="price-tag">₹3,500</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Top Performer - Annual Tech Fest</h3>
-                    <p class="text-gray-600 mb-4">Awarded for outstanding performance in the annual tech fest, showcasing innovative projects.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-medium text-primary">2023</span>
-                        <a href="#" class="text-sm font-medium text-primary hover:text-secondary transition-colors">
-                            Details <i class="fas fa-chevron-right ml-1"></i>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Raspberry Pi 4 Model B</h3>
+                        <p class="text-gray-600 text-sm mb-4">Compact single-board computer perfect for learning programming and electronics.</p>
+                        <a href="https://www.amazon.in/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/" target="_blank" class="w-full block text-center px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition-colors">
+                            Buy Now
                         </a>
                     </div>
                 </div>
                 
-                <!-- Achievement 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-award text-primary text-2xl"></i>
+                <!-- Hardware Item 2 -->
+                <div class="hardware-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://m.media-amazon.com/images/I/61kAqY5lVaL._AC_UF1000,1000_QL80_.jpg" alt="Arduino Starter Kit" class="w-full h-48 object-cover">
+                        <span class="price-tag">₹2,800</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Dean's List Honors</h3>
-                    <p class="text-gray-600 mb-4">Recognized for academic excellence by being named to the Dean's List for consecutive semesters.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-medium text-primary">2022-2023</span>
-                        <a href="#" class="text-sm font-medium text-primary hover:text-secondary transition-colors">
-                            Details <i class="fas fa-chevron-right ml-1"></i>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Arduino Starter Kit</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete kit for beginners to learn electronics and microcontroller programming.</p>
+                        <a href="https://www.amazon.in/Arduino-Starter-Official-English-Projects/dp/B009UKZV0A/" target="_blank" class="w-full block text-center px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition-colors">
+                            Buy Now
                         </a>
                     </div>
                 </div>
                 
-                <!-- Achievement 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-hands-helping text-primary text-2xl"></i>
+                <!-- Hardware Item 3 -->
+                <div class="hardware-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://m.media-amazon.com/images/I/71S5Uw0+9VL._AC_UF1000,1000_QL80_.jpg" alt="Mechanical Keyboard" class="w-full h-48 object-cover">
+                        <span class="price-tag">₹4,200</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Community Service Award</h3>
-                    <p class="text-gray-600 mb-4">Recognized for volunteering efforts in local community service projects, making a positive impact.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm font-medium text-primary">2023</span>
-                        <a href="#" class="text-sm font-medium text-primary hover:text-secondary transition-colors">
-                            Details <i class="fas fa-chevron-right ml-1"></i>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Mechanical Keyboard</h3>
+                        <p class="text-gray-600 text-sm mb-4">RGB backlit mechanical keyboard with blue switches for programmers.</p>
+                        <a href="https://www.amazon.in/Redragon-KUMARA-Backlit-Mechanical-Keyboard/dp/B016MAK38U/" target="_blank" class="w-full block text-center px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition-colors">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hardware Item 4 -->
+                <div class="hardware-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://m.media-amazon.com/images/I/71Q4hVbEWpL._AC_UF1000,1000_QL80_.jpg" alt="External SSD" class="w-full h-48 object-cover">
+                        <span class="price-tag">₹6,500</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">500GB External SSD</h3>
+                        <p class="text-gray-600 text-sm mb-4">High-speed portable storage solution for students and developers.</p>
+                        <a href="https://www.amazon.in/SanDisk-Extreme-Portable-SSD-External/dp/B078SWJ3CF/" target="_blank" class="w-full block text-center px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition-colors">
+                            Buy Now
                         </a>
                     </div>
                 </div>
             </div>
             
+            <div class="mt-12 text-center">
+                <a href="https://www.amazon.in/" target="_blank" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg shadow hover:shadow-lg transition-all hover:transform hover:-translate-y-1">
+                    <i class="fas fa-shopping-cart mr-2"></i> Explore More Hardware
+                </a>
+            </div>
+        </section>
+
             <!-- Additional Achievements -->
             <div class="mt-12 bg-gradient-to-r from-primary to-secondary p-8 rounded-xl shadow-lg">
                 <div class="flex flex-col md:flex-row items-center">
